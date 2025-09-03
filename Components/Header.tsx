@@ -3,7 +3,7 @@ import Button from "./UI/Button";
 
 export default function Header() {
   return (
-    <header className="border-b bg-card">
+    <div className="border-b border-slate-300">
       <div className="flex h-16 items-center justify-between px-6">
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-2">
@@ -11,10 +11,10 @@ export default function Header() {
           </div>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center">
           <Button bgColor="black" textColor="white" text="add Item" />
         </div>
       </div>
-    </header>
+    </div>
   );
 }
