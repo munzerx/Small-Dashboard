@@ -2,18 +2,12 @@
 import Button from "./UI/Button";
 import { StatusBadge } from "./StatusBadge";
 import { X } from "lucide-react";
-
-interface Item {
-  id: string;
-  title: string;
-  description: string;
-  status: string;
-}
+import { ItemProps } from "@/Types/item";
 
 interface ItemDetailsModalProps {
   isOpen: boolean;
   onClose: () => void;
-  item: Item | null;
+  item: ItemProps | null;
 }
 
 export function ItemDetailsModal({
@@ -34,9 +28,10 @@ export function ItemDetailsModal({
       {/* Modal */}
       <div className="relative w-full max-w-2xl max-h-[90vh] overflow-hidden">
         <div className="m-4 bg-white rounded-2xl">
+
           {/* Header */}
           <div className="flex items-center justify-between p-6 border-b border-slate-300">
-            <h2 className="text-xl font-semibold text-foreground">
+            <h2 className="text-xl font-semibold">
               Item Details
             </h2>
             <Button bgColor="black" textColor="white"  onClick={onClose}>
@@ -45,12 +40,12 @@ export function ItemDetailsModal({
           </div>
 
           {/* Content */}
-          <div className="p-6 max-h-[calc(90vh-8rem)] overflow-y-auto">
+          <div className="p-6 overflow-y-auto">
             <div className="space-y-6">
               {/* ID and Status */}
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <span className="font-mono text-sm text-muted-foreground">
+                  <span className="font-mono text-sm">
                     ID: {item.id}
                   </span>
                 </div>
@@ -62,18 +57,18 @@ export function ItemDetailsModal({
                 <label className="text-sm font-medium text-slate-400 mb-2 block">
                   Title
                 </label>
-                <h3 className="text-lg font-medium text-foreground text-balance">
+                <h3 className="text-lg font-medium text-balance">
                   {item.title}
                 </h3>
               </div>
 
               {/* Description */}
               <div>
-                <label className="text-sm font-medium text-muted-foreground mb-2 flex items-center gap-2">
+                <label className="text-sm font-medium mb-2 flex items-center gap-2">
                   Description
                 </label>
                 <div className="rounded-lg bg-slate-100 py-4 px-6">
-                  <p className="text-foreground text-pretty leading-relaxed">
+                  <p>
                     {item.description}
                   </p>
                 </div>

@@ -1,8 +1,4 @@
-interface StatusBadgeProps {
-  status: "active" | "inactive" | "pending" | "completed";
-  className?: string;
-}
-
+import { StatusBadgeProps } from "@/Types/item";
 export function StatusBadge({ status, className }: StatusBadgeProps) {
   const variants = {
     active: "bg-green-100 text-green-800 border-green-200",
