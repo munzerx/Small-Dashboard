@@ -5,11 +5,13 @@ export default function Button({
   text,
   textColor,
   additionalStyles,
+  children,
   ...props
 }: {
   bgColor: string;
-  text: string;
+  text?: string;
   textColor?: string;
+  children?: React.ReactNode;
   additionalStyles?: string;
 }) {
   return (
@@ -20,6 +22,7 @@ export default function Button({
       type="button"
     >
       {text}
+      {children}
     </button>
   );
 }
