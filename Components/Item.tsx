@@ -1,14 +1,23 @@
 import React from "react";
 import Button from "./UI/Button";
 import { StatusBadge } from "./StatusBadge";
-import { ItemProps } from "@/Types/item";
+import type { ItemProps } from "@/Types/item";
 
-export default function Item({ id, title, description, status }: ItemProps) {
+interface Props extends ItemProps {
+  onClick: () => void;
+}
+
+export default function Item({
+  id,
+  title,
+  description,
+  status,
+  onClick,
+}: Props) {
   return (
     <div
-      key={id}
       className="w-full bg-white border-slate-300 rounded-2xl border-[0.2px] p-4 hover:shadow-md transition-shadow cursor-pointer"
-      //   onClick={() => onItemClick(item.id)}
+      onClick={onClick} // ✅ Make whole card clickable
     >
       <div className="flex items-start justify-between">
         <div className="flex-1 min-w-0">
