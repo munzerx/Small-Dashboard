@@ -16,3 +16,8 @@ export interface ItemDetailsModalProps {
     status: string;
   };
 }
+
+export interface StatusBadgeProps {
+  status: "active" | "inactive" | "pending" | "completed";
+  className?: string;
+}
