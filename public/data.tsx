@@ -1,6 +1,6 @@
-import type { Item } from "../Types/item";
+import type { ItemProps } from "../Types/item";
 
-export const mockItems: Item[] = [
+export const mockItems: ItemProps[] = [
   {
     id: "1",
     title: "Project Alpha Setup",
