@@ -1,6 +1,7 @@
 import React from "react";
 import Item from "./Item";
 import { mockItems } from "../public/data";
+import type { ItemProps } from "../Types/item";
 
 interface ItemListProps {
   onItemClick: (id: string) => void;
@@ -16,7 +17,7 @@ export default function ItemList({ onItemClick }: ItemListProps) {
       </div>
 
       <div className="flex flex-col gap-5">
-        {mockItems.map((item: any) => (
+        {mockItems.map((item: ItemProps) => (
           <Item
             key={item.id}
             id={item.id}
