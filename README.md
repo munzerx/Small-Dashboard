@@ -32,6 +32,7 @@ pnpm install
 ```
 
 ## 2. Run the development server
+
 ```bash
 npm run dev
 # or
@@ -39,3 +40,10 @@ yarn dev
 # or
 pnpm dev
 ```
+
+## 3. What I'd improve
+
+- add time & date of item creation
+- add filtiring by date
+- add pagination for easier loading and viewing
+- add loading/error state
