@@ -1,5 +1,12 @@
 import React from "react";
 
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  bgColor: string;
+  text?: string;
+  textColor?: string;
+  additionalStyles?: string;
+}
+
 export default function Button({
   bgColor,
   text,
@@ -7,13 +14,7 @@ export default function Button({
   additionalStyles,
   children,
   ...props
-}: {
-  bgColor: string;
-  text?: string;
-  textColor?: string;
-  children?: React.ReactNode;
-  additionalStyles?: string;
-}) {
+}: ButtonProps) {
   return (
     <button
       className={`px-4 py-2 rounded-md hover:cursor-pointer hover:opacity-85 ${additionalStyles}`}
